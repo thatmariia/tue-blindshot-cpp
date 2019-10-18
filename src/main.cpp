@@ -272,6 +272,8 @@ cv::Mat processImage (cv::Mat image) {
             //cout << "no rects detected" << endl;
             advice = ADVICE_NOT_DETECTED;
     }
+  
+    // TODO:: send the advice var over via BLE
 
     return image;
 }
