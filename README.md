@@ -17,5 +17,5 @@ make
 ```
 The application is now build in ./build/src/blindshot{x.x.x}
 
-# Licence
-Sander Steeghs
+# Acknokwedgement
+https://github.com/SanderSteeghs/cmake-opencv 
