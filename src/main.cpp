@@ -12,13 +12,15 @@ using namespace std;
 
 #define ADVICE_NOT_DETECTED 0
 #define ADVICE_DETECTED     1
-#define ADVICE_SHOOT 2
-#define ADVICE_LEFT  3
-#define ADVICE_RIGHT 4
-#define ADVICE_UP    5
-#define ADVICE_DOWN 6
+#define ADVICE_SHOOT        2
+#define ADVICE_LEFT         3
+#define ADVICE_RIGHT        4
+#define ADVICE_UP           5
+#define ADVICE_DOWN         6
 
 #define _USE_MATH_DEFINES
+
+#define BULLS_EYE 0.14
 
 #define THRESH 50
 #define N 5
@@ -250,7 +252,7 @@ cv::Mat processImage (cv::Mat image) {
             string str_targetRect_center = to_string(targetRect.center.x) + ", " + to_string(targetRect.center.y);
             putText(image, str_targetRect_center, targetRect.center, FONT_HERSHEY_PLAIN, 2, Scalar(255,255,255), 2);
 
-            float allowed_dist = ((targetRect.size.height + targetRect.size.width)/2) * 0.2;
+            float allowed_dist = ((targetRect.size.height + targetRect.size.width)/2) * BULLS_EYE;
 
             advice = getCurrAdvice(allowed_dist, targetRect.center, image_center, image);
             string str_advice;
